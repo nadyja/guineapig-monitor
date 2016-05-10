@@ -2,11 +2,13 @@
 
 Continuation of the work on IoT-enabling my guineapigs.
 
+!(http://fritzing.org/media/fritzing-repo/projects/g/guinea-pig-monitor/images/photo.jpg )
+
 
 ## Links
 * [PracujLabs: Guinea pig surveillance system using Arduino and ESP8266](http://pracujlabs.io/2015/12/31/pig-surveilance.html) (step-by-step guide for ultrasound haystack monitoring)
+* [Czy świnie sie pasa](http://nadyja.webd.pl/czy-swinie-sie-pasa/#/) (webapp, currently offline)
 * [Fritzing project](http://fritzing.org/projects/guinea-pig-monitor)
-* [Webapp: Czy świnie sie pasa](http://nadyja.webd.pl/czy-swinie-sie-pasa/#/) (offline)
 * [ThingsSpeak](https://thingspeak.com/channels/69167)
 
 
