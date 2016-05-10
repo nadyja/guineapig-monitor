@@ -2,7 +2,7 @@
 
 Continuation of the work on IoT-enabling my guineapigs.
 
-![](https://github.com/nmietkiewicz/guineapig-monitor/blob/master/Images/ultrasoundhayrack.jpg )
+![](https://github.com/nmietkiewicz/guineapig-monitor/blob/master/Images/ultrasoundhayrack-s.jpg )
 
 
 ## Links
