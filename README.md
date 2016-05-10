@@ -1,2 +1,3 @@
 # guineapig-monitor
-Spying on guineapigs with Arduino
+
+Continuation of the [work](http://pracujlabs.io/2015/12/31/pig-surveilance.html) on IoT-enabling my guineapigs.
