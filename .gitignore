@@ -1,2 +1,3 @@
 _RESOURCES/
 Arduino/config.h
+Arduino/**/config.h
