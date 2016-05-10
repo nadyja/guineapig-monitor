@@ -1,3 +1,4 @@
+#include "config.h"
 #include <stdlib.h>
 #include <SoftwareSerial.h>
 
@@ -7,8 +8,9 @@ int pigLed  = 7;
 int rxPin   = 2;
 int txPin   = 3;
 
-String apiIP = "184.106.153.149";
-String apiKey = "[Thingspeak API write key]";
+
+String apiIP = THINGS_SPEAK_IP;
+String apiKey = THINGS_SPEAK_WRITE_KEY;
 SoftwareSerial softwareSerial(rxPin,txPin);
 float wallDistance = 33.0;
 float soundVelocity = 34 / 1000;
