@@ -2,7 +2,7 @@
 
 Continuation of the work on IoT-enabling my guineapigs.
 
-!(http://fritzing.org/media/fritzing-repo/projects/g/guinea-pig-monitor/images/photo.jpg )
+![](https://github.com/nmietkiewicz/guineapig-monitor/blob/master/Images/ultrasoundhayrack.jpg )
 
 
 ## Links
