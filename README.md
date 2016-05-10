@@ -1,4 +1,4 @@
-# guineapig-monitor
+# Guinea pig surveillance system using Arduino and ESP8266
 
 Continuation of the work on IoT-enabling my guineapigs.
 
