@@ -2,11 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "module_LCDDisplay.h"
-#include "module_Sensor.h"
+#include "module_Scale.h"
 #include "module_Wifi.h"
 
 String apiKey = THINGS_SPEAK_WRITE_KEY;
-
 
 LCDDisplay screen;
 Sensor distanceSensor(A0, 10);
