@@ -2,6 +2,6 @@ _RESOURCES/
 Arduino/config.h
 Arduino/**/config.h
 Backend/
-Frontend/dist
-Frontend/node_modules
+Frontend/dist/
+Frontend/node_modules/
 OLD/
