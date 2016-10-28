@@ -84,21 +84,31 @@ Try typing AT and enter in the Serial Monitor. Expected answer is an OK. Differe
 
 First we need to set the Wi-Fi mode:
 
-``AT+CWMODE=1``
+```
+AT+CWMODE=1
+```
 This will make ESP8266 work as a web client
 
 Next to list the available networks:
 
-``AT+CWLAP``
+```
+AT+CWLAP
+```
 And to connect to a chosen network:
 
-``AT+CWJAP="[ssid]","[password]"``
+```
+AT+CWJAP="[ssid]","[password]"
+```
 Now ESP8266 will connect to this network each time it starts. You can check it's IP by:
 
-``AT+CIFSR``
+```
+AT+CIFSR
+```
 At last, set the baudrate for 115200
 
-``AT+CIOBAUD=115200``
+```
+AT+CIOBAUD=115200
+```
 This will prevent trouble with debugging via Serial Monitor and communicating with the Wi-Fi module at the same time.
 
 And that's it - ESP8266 is ready to use!
@@ -111,11 +121,8 @@ Now that the programming is finished, the module's RX and TX pins will be used f
 #The data server
 I programmed ESP8266 to work as a web client, which means it will need a server to transmit it's data to. The simplest way is to send it to the cloud via https://thingspeak.com/. A short registration process allows you to create channels for different sensors. The only restriction: do not post data in less than 15s intervals.
 
-Creating a channel gives you read and write keys:
+Creating a channel gives you read and write keys. Let's use the write key in the application
 
-
-
-Let's use the write key in the application
 ```
     #include <stdlib.h>
     #include <SoftwareSerial.h>
