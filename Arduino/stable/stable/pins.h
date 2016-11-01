@@ -1,15 +1,15 @@
 // SCALE config
-#define blueDOUT     11
-#define orangeCLK    10
+#define whiteDOUT   11
+#define greenCLK    10
 
 // WIFI config
 #define yellowTX     8
 #define greenRX      9
 
 // LCD config
-#define LCDRS        7
-#define LCDEnable    6
-#define LCDD4        5
-#define LCDD5        4
-#define LCDD6        3
-#define LCDD7        2
+#define LCDEnable    7
+#define LCDRS        6
+#define LCDD4        2
+#define LCDD5        3
+#define LCDD6        4
+#define LCDD7        5
