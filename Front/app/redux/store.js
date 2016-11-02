@@ -1,11 +1,13 @@
 import { createStore, compose, combineReducers, applyMiddleware } from 'redux';
-import { reducer as chartReducer, pigreducer as pigReducer } from './chart';
+import { statusReducer, pigsReducer, shadowpigsReducer, timelineReducer } from './index.js';
 
 const devtools = window.devToolsExtension || (() => noop => noop);
 
 const rootReducer = combineReducers({
-  charts: chartReducer,
-  pigs: pigReducer
+  status: statusReducer,
+  pigs: pigsReducer,
+  shadowpigs: shadowpigsReducer,
+  timeline: timelineReducer
 //  session: (state = {}) => state,
 });
 

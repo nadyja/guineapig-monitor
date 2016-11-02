@@ -1,13 +1,13 @@
 import _ from 'lodash';
 import {
-  UPDATE,
+  UPDATE_STATUS,
 } from './constants';
 
-const initialState = [];
+const initialState = {};
 
-export default function charts(state = initialState, action) {
+export default function status(state = initialState, action) {
   switch (action.type) {
-    case UPDATE: {
+    case UPDATE_STATUS: {
       return action.payload;
     }
     default: {
