@@ -1,17 +1,14 @@
-readChannelID = 116913;
-readAPIKey = [Inset key here];
-wightFieldId = 1;
-writeChannelID = 175026;
-writeAPIKey = [Inset key here];
-
+READ_CHANNEL_ID = 116913;
+WRITE_CHANNEL_ID = 175026;
+WRITE_API_KEY = [Inset key here];
+FIELD_ID = 1;
 PIG_MIN=700;
-PIG_SEPARATOR = 1000;
 
 
-[data, timestamp] = thingSpeakRead(readChannelID, 'fields', wightFieldId, 'NumPoints', 2, 'ReadKey', readAPIKey);
+[data, timestamp] = thingSpeakRead(READ_CHANNEL_ID, 'fields', FIELD_ID, 'NumPoints', 2);
 if data(1) > PIG_MIN && data(2) <= PIG_MIN
 
-    [data, timestamp] = thingSpeakRead(writeChannelID);
+    [data, timestamp] = thingSpeakRead(WRITE_CHANNEL_ID);
     now = datetime('now','TimeZone','local');
 
     d2s = 24*60;    % convert from days to minutes
@@ -26,15 +23,14 @@ if data(1) > PIG_MIN && data(2) <= PIG_MIN
     end;
     display(minutesSinceLastPig);
 
-    [data, timestamp] = thingSpeakRead(readChannelID, 'fields', wightFieldId, 'numMinutes', minutesSinceLastPig, 'ReadKey', readAPIKey);
+    [data, timestamp] = thingSpeakRead(READ_CHANNEL_ID, 'fields', FIELD_ID, 'numMinutes', minutesSinceLastPig);
     [length,n] = size(data);
-
 
 
     timestamps_out = [];
     data_out = [];
-
     stay =[];
+
     for i = 1:length-1
       if data(i)< PIG_MIN && data(i+1) >= PIG_MIN %% pig will enter
         start = timestamp(i+1);
@@ -61,6 +57,6 @@ if data(1) > PIG_MIN && data(2) <= PIG_MIN
     display(timestamps_out);
     display(data_out);
     if h > 0
-        thingSpeakWrite(writeChannelID,data_out,'TimeStamp',timestamps_out,'WriteKey',writeAPIKey)
+        thingSpeakWrite(WRITE_CHANNEL_ID,data_out,'TimeStamp',timestamps_out,'WriteKey',WRITE_API_KEY)
     end;
 end;
