@@ -10,8 +10,9 @@
 #include "./lcd.h"
 #include "./scale.h"
 
+float calibrationFactor = 800.0;
 
-Scale scale(whiteDOUT, greenCLK, 800.0);
+Scale scale(whiteDOUT, greenCLK, calibrationFactor);
 Wifi wifi (greenRX, yellowTX, THINGS_SPEAK_WRITE_KEY, THINGS_SPEAK_IP);
 LCDDisplay lcd(LCDRS, LCDEnable, LCDD4, LCDD5, LCDD6, LCDD7);
 
