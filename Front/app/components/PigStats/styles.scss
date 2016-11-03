@@ -16,15 +16,20 @@
   border-radius: 50%;
   margin-right: 20px;
 }
-
+.gryzelda {
+  border: 5px solid #ff9800;
+}
+.hrumhilda {
+  border: 5px solid #03a9f4;
+}
   .pigName {
     text-transform: uppercase;
     color: #aaa;
     font-size: 14px;
-    margin:0;
+    margin:0 0 30px;
   }
   .pigWeight {
-    font-size: 50px;
+    font-size: 30px;
   }
   .pigLast {}
 .chart {

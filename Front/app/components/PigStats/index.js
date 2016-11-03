@@ -3,10 +3,10 @@ import styles from './styles.scss';
 import gryzeldaImg from './gryzelda.jpg';
 import hrumhildaImg from './hrumhilda.jpg';
 import moment from 'moment';
+import classNames from 'classnames';
 
 function PigStats(props) {
   const { name, data } = props;
-  console.log(data);
 
   let imgUrl;
   if(name == 'gryzelda') imgUrl = gryzeldaImg;
@@ -17,27 +17,16 @@ function PigStats(props) {
   if(data.length==0) return null;
   return ( <div className={styles.pig}>
     <div className={styles.header}>
-      <img className={styles.image} src={imgUrl} />
+      <img className={classNames(styles.image, styles[name])} src={imgUrl} />
     </div>
     <div className={styles.content}>
       <h3 className={styles.pigName}>{name}</h3>
       <p>
-        <label>last weight</label>
-        <span>{data[data.length-1].weight} g</span>
+        <span className={styles.pigWeight}>{parseFloat(data[data.length-1].weight).toFixed(1)} g</span>
       </p>
       <p>
-        <label>last mesured</label>
-        <span>{data[data.length-1].timestamp.format('YYYY-MM-DD HH:mm:ss')}</span>
+        <span className={styles.pigLast}>{data[data.length-1].timestamp.format('YYYY-MM-DD HH:mm:ss')}</span>
       </p>
-      <p>
-        <label>today time in bunker</label>
-
-      </p>
-      <p>
-        <label>avg daily time in bunker</label>
-
-      </p>
-
     </div>
   </div>);
 }

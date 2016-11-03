@@ -244,4 +244,22 @@
   .vis-item.pig2 { background: #03a9f4 !important;}
 
 
-h2 { margin-top: 50px; font-size: 20px;}
+h2 {     text-transform: uppercase;
+    color: #aaa;
+    font-size: 14px;
+    margin: 90px 0 30px;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+.header h3 { flex: 0 0 auto; margin:0;}
+.header .status { flex: 1 1 auto; text-align: right; text-transform: uppercase; font-weight: bold;}
+.header .status-online { color: #76ce55;}
+.header .status-offline { color: #f44336;}
+
+.container { width: 960px;}

@@ -130,10 +130,10 @@ class Wrapper extends Component {
       <Status data={status}/>
         <section className="container">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-xs-6">
               <PigStats name="gryzelda" data={pigs[GRYZELDA]} />
             </div>
-            <div className="col-md-6">
+            <div className="col-xs-6">
               <PigStats name="hrumhilda" data={pigs[HRUMHILDA]} />
             </div>
           </div>

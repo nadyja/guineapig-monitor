@@ -10,6 +10,7 @@
   "author": "Ean Platter <eanplatter@gmail.com> (eanplatter.github.io)",
   "license": "ISC",
   "dependencies": {
+    "classnames": "^2.2.5",
     "history": "^1.13.0",
     "moment": "^2.15.2",
     "react": "^15.3.2",

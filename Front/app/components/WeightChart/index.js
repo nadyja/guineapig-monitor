@@ -34,116 +34,73 @@ class WeightChart extends Component {
     const midle=980;
     return (<section className="container">
       <h2>Weight</h2>
-      {
-      // <XYPlot
-      //   width={960}
-      //   height={300}
-      //   animation={true}>
-      //   <HorizontalGridLines />
-      //   <VerticalGridLines/>
-      //   <XAxis title="time" tickTotal={8} tickFormat={arg => moment(arg).format("D MMM HH:mm")} tickLabelAngle={0} />
-      //   <YAxis title="weight" />
-      //   <LineMarkSeries
-      //     onValueMouseOver={this._rememberValue}
-      //     onValueMouseOut={this._forgetValue}
-      //     color="#ff9800"
-      //     size="2"
-      //     data={lines[GRYZELDA].map( (item, index) => ({
-      //       x: item.timestamp,
-      //       y: item.weight
-      //     }))}/>
-      //   <LineMarkSeries
-      //     onValueMouseOver={this._rememberValue}
-      //     onValueMouseOut={this._forgetValue}
-      //     color="#03a9f4"
-      //     size="2"
-      //     data={lines[HRUMHILDA].map( (item, index) => ({
-      //       x: item.timestamp,
-      //       y: item.weight
-      //     }))}/>
-      //
-      //   { value && <Hint value={value}>
-      //   <div style={{background: 'black'}}>
-      //     {moment(value.x).format("D MMM HH:mm:ss")}<br />
-      //     {value.y}g
-      // </div></Hint> }
-      //   </XYPlot>
-      }
-
-        <XYPlot
-          width={960}
-          height={300}
-          animation={true}>
-          <HorizontalGridLines />
-          <VerticalGridLines/>
-          <XAxis title="i" />
-          <YAxis title="weight" />
-            <VerticalBarSeries
-              color="#ccc"
-              strokeWidth="30"
-              data={bars.map( (item, index) => ({
+      <XYPlot
+        width={930}
+        height={300}
+        animation={true}>
+        <HorizontalGridLines />
+        <VerticalGridLines/>
+        <XAxis title="i" />
+        <YAxis title="weight" />
+          <VerticalBarSeries
+            color="#ccc"
+            strokeWidth="30"
+            data={bars.map( (item, index) => ({
+              x: item.id,
+              y: item.weight
+            }))}
+            />
+            <LineSeries
+              color="#ff9800"
+              strokeStyle="dashed"
+              strokeWidth="1"
+              opacity="0.5"
+              data={shadow[GRYZELDA].map( (item, index) => ({
                 x: item.id,
                 y: item.weight
-              }))}
-              />
-              <LineSeries
-                color="#ff9800"
-                strokeStyle="dashed"
-                strokeWidth="1"
-                opacity="0.5"
-                data={shadow[GRYZELDA].map( (item, index) => ({
-                  x: item.id,
-                  y: item.weight
-                }))}/>
-              <LineSeries
-                color="#03a9f4"
-                strokeStyle="dashed"
-                strokeWidth="1"
-                opacity="0.5"
-                data={shadow[HRUMHILDA].map( (item, index) => ({
-                  x: item.id,
-                  y: item.weight
-                }))}/>
-            <LineMarkSeries
-              onValueMouseOver={this._rememberValue}
-              onValueMouseOut={this._forgetValue}
-              color="#ff9800"
-              size="2"
-              data={lines[GRYZELDA].map( (item, index) => ({
-                x: item.id,
-                y: item.weight,
-                date: item.timestamp,
-                duration: item.duration
               }))}/>
-
-            <LineMarkSeries
-              onValueMouseOver={this._rememberValue}
-              onValueMouseOut={this._forgetValue}
+            <LineSeries
               color="#03a9f4"
-              size="2"
-              data={lines[HRUMHILDA].map( (item, index) => ({
+              strokeStyle="dashed"
+              strokeWidth="1"
+              opacity="0.5"
+              data={shadow[HRUMHILDA].map( (item, index) => ({
                 x: item.id,
-                y: item.weight,
-                date: item.timestamp,
-                duration: item.duration
+                y: item.weight
               }))}/>
+          <LineMarkSeries
+            onValueMouseOver={this._rememberValue}
+            onValueMouseOut={this._forgetValue}
+            color="#ff9800"
+            size="2"
+            data={lines[GRYZELDA].map( (item, index) => ({
+              x: item.id,
+              y: item.weight,
+              date: item.timestamp,
+              duration: item.duration
+            }))}/>
 
-          { value && <Hint value={value} >
+          <LineMarkSeries
+            onValueMouseOver={this._rememberValue}
+            onValueMouseOut={this._forgetValue}
+            color="#03a9f4"
+            size="2"
+            data={lines[HRUMHILDA].map( (item, index) => ({
+              x: item.id,
+              y: item.weight,
+              date: item.timestamp,
+              duration: item.duration
+            }))}/>
+
+        { value &&
+        <Hint value={value} >
           <div className="rv-hint__content">
             <strong>time:</strong> {moment(value.timestamp).format("D MMM HH:mm:ss")}<br />
             <strong>weight:</strong> {parseFloat(value.y).toFixed(1)} g<br />
             <strong>duration:</strong> {parseFloat(value.duration/60).toFixed(1)} min
-        </div></Hint> }
-        </XYPlot>
-
-          <DiscreteColorLegend
-            orientation="horizontal"
-            width={960}
-            items={[
-              {title: 'Gryzelda', color: '#ff9800' },
-              {title: 'Hrumhilda', color: '#03a9f4' }
-            ]}
-          />
+            </div>
+        </Hint> }
+      </XYPlot>
     </section>);
   }
 }

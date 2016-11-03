@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import {HRUMHILDA, GRYZELDA, WEIGHT_BORDERLINE, WEIGHT_MINIMUM} from '../../config';
 import moment from 'moment';
+import styles from './styles.scss';
 
 function getStatus(weight, timestamp) {
   const MINUTES_TO_OFFLINE = 5;
@@ -16,25 +17,31 @@ function Status(props) {
   const statusMessages = {
     0: 'offline',
     1: 'empty',
-    2: 'mesurment in progress'
+    2: weight>WEIGHT_BORDERLINE?'Gryzelda':'Hrumhilda'
   }
   return (
     <div className="jumbotron">
       <section className="container">
         <div className="row">
-        <div className="col-md-4">
-          <label>Status</label>
-          <figure>{statusMessages[status]}</figure>
+        <div className="col-xs-4">
+          <div className={styles.item}>
+            <label className={styles.label}>Status</label>
+            <figure className={styles.number}>{statusMessages[status]}</figure>
+          </div>
         </div>
-        <div className="col-md-4">
-          <label>{status==0?'Last weight':'Weight'}</label>
-          <figure>{weight}</figure>
-          {isPig &&<small>{weight>WEIGHT_BORDERLINE?'Gryzelda':'Hrumhilda'}</small>}
+        <div className="col-xs-4">
+          <div className={styles.item}>
+            <label className={styles.label}>{status==0?'Last weight':'Weight'}</label>
+            <div className={status==2?styles.blink:''}>
+            <figure className={styles.number}>{parseFloat(weight).toFixed(1)} g</figure>
+            </div>
+          </div>
         </div>
-        <div className="col-md-4">
-          <label>Last updated</label>
-          <figure>{timestamp.fromNow()}</figure>
-          <small>{timestamp.format('HH:mm:ss')}</small>
+        <div className="col-xs-4">
+          <div className={styles.item}>
+            <label className={styles.label}>Last updated</label>
+            <figure className={styles.number}>{timestamp.format('HH:mm:ss')}</figure>
+          </div>
         </div>
       </div>
       </section>
