@@ -1,8 +1,8 @@
 readChannelID = 116913;
-readAPIKey = '4PEVSBUMPSOHV6LE';
+readAPIKey = [Inset key here];
 wightFieldId = 1;
 writeChannelID = 175026;
-writeAPIKey = '9CBTAPQK06V2ZJG5';
+writeAPIKey = [Inset key here];
 
 PIG_MIN=700;
 PIG_SEPARATOR = 1000;
